@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player - CodeAlpha</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .progress-bar {
+            background: linear-gradient(to right, #3b82f6 0%, #3b82f6 var(--progress), #e5e7eb var(--progress), #e5e7eb 100%);
+        }
+        .volume-bar {
+            background: linear-gradient(to right, #3b82f6 0%, #3b82f6 var(--volume), #e5e7eb var(--volume), #e5e7eb 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen">
+    <div class="bg-gray-800 p-6 rounded-xl shadow-2xl w-full max-w-md text-white">
+        <div class="flex justify-center mb-4">
+            <img id="album-art" src="https://via.placeholder.com/300x300?text=Album+Art" alt="Album Art" class="w-48 h-48 rounded-lg shadow-md">
+        </div>
+        <h2 id="song-title" class="text-xl font-bold text-center">Song Title</h2>
+        <p id="song-artist" class="text-gray-400 text-center">Artist Name</p>
+        <div class="mt-4">
+            <div class="progress-bar h-2 rounded-full cursor-pointer" id="progress-bar"></div>
+            <div class="flex justify-between text-sm text-gray-400 mt-1">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+        </div>
+        <div class="flex justify-center space-x-4 mt-4">
+            <button id="prev-btn" class="text-gray-400 hover:text-white">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M6 4h2v16H6zm10 0l8 8-8 8z"/></svg>
+            </button>
+            <button id="play-pause-btn" class="bg-blue-500 hover:bg-blue-600 p-3 rounded-full">
+                <svg id="play-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <svg id="pause-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 4h4v16H6zm8 0h4v16h-4z"/></svg>
+            </button>
+            <button id="next-btn" class="text-gray-400 hover:text-white">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M18 4h-2v16h2zm-10 0l-8 8 8 8z"/></svg>
+            </button>
+        </div>
+        <div class="mt-4">
+            <div class="volume-bar h-2 rounded-full cursor-pointer" id="volume-bar"></div>
+            <div class="flex justify-between text-sm text-gray-400 mt-1">
+                <span>Volume</span>
+                <span id="volume-value">100%</span>
+            </div>
+        </div>
+        <div class="mt-4">
+            <h3 class="text-lg font-semibold">Playlist</h3>
+            <ul id="playlist" class="mt-2 max-h-40 overflow-y-auto">
+                <!-- Playlist items will be dynamically added here -->
+            </ul>
+        </div>
+    </div>
+    <script src="music_player.js"></script>
+</body>
+</html>
